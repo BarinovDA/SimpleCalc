@@ -1,10 +1,6 @@
-package ru.SimplCalc.calc.app;
+package ru.SimplCalc.Calc.app;
 
-import ru.SimplCalc.calc.utils.UserEnterParser;
-import ru.SimplCalc.calc.utils.UserString;
-import ru.SimplCalc.calc.utils.UserEnterHandler;
-
-import java.util.Map;
+import ru.SimplCalc.Calc.utils.*;
 
 public class Calc {
     private static UserEnterParser userEnterParser;
@@ -13,7 +9,7 @@ public class Calc {
         try {
             userEnterParser = UserEnterHandler.validate(userString);
         }catch (Exception e){
-            System.out.println("Not validate parameters!" + e);
+            System.out.println("Не корректный ввод" + e);
             System.exit(1);
         }
         calculate(userEnterParser);
@@ -40,7 +36,10 @@ public class Calc {
             default:
                 throw new IllegalArgumentException("Допустимые действия +,-,*,/");
         }
-        System.out.print(result);
+        if (userEnterParser.numType == NumType.RIM){
+            System.out.print(RomanNumeral.arabicToRoman(result));
+        }
+        System.out.print(" Arabic-" + result);
         System.out.println("");
     }
 }

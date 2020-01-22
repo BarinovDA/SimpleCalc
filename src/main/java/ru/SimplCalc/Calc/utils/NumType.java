@@ -1,4 +1,4 @@
-package ru.SimplCalc.calc.utils;
+package ru.SimplCalc.Calc.utils;
 
 public enum  NumType {
     ARABIAN,

@@ -1,4 +1,4 @@
-package ru.SimplCalc.calc.utils;
+package ru.SimplCalc.Calc.utils;
 
 public class UserString {
     private  String userStr ="";
@@ -11,7 +11,7 @@ public class UserString {
         return userStr;
     }
 
-    public  boolean getBoolean (){
-        return userStr.equals("stop");
+    public  boolean isStop(){
+        return userStr.toLowerCase().equals("stop");
     }
 }

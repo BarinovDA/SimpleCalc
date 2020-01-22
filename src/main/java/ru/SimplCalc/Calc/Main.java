@@ -1,8 +1,7 @@
-package ru.SimplCalc.calc;
+package ru.SimplCalc.Calc;
 
-import ru.SimplCalc.calc.app.Calc;
-import ru.SimplCalc.calc.utils.MapNumbers;
-import ru.SimplCalc.calc.utils.UserString;
+import ru.SimplCalc.Calc.app.Calc;
+import ru.SimplCalc.Calc.utils.UserString;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,12 +11,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        boolean cycle = true;
         UserString userString;
-        while (cycle == true) {
+        while (true) {
             userString = new UserString(bufferedReader.readLine());
             //пока не ввели слово stop продолжаем считать
-            if (userString.getBoolean()) break;
+            if (userString.isStop()) break;
             Calc.doWhatYouMast(userString);
         }
     }
